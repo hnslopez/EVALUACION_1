@@ -1,0 +1,141 @@
+.img-rounded{
+    border-radius: 25px;
+    width: 50px;
+}
+#justificado{
+    justify-content: flex-start;
+}
+ #parrafo{
+     margin-top: 10px;
+     margin-left: 20px;
+     padding-left: 10px;
+ }
+
+.container{
+    margin-top: 10px;
+}
+#publicidad{
+    width: 300px;
+}
+
+*{ 
+    padding: 0; 
+    margin: 0;
+}
+
+.navbar-custom{
+    border-color: white;
+    border-bottom-style: solid;
+
+}
+
+.carousel{
+    width: 100%;
+}
+
+  .btn-search {
+        background: #424242;
+        border-radius: 0;
+        color: #fff;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #1c1c1c;
+    }
+.btn-search:link, .btn-search:visited {
+        color: #fff;
+    }
+
+.btn-search:active, .btn-search:hover {
+        background: #1c1c1c;
+        color: #fff;
+}
+
+
+.final{
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.text-background{
+   /* background-color: #232323!important;*/
+    color: #fff;
+}
+
+@media (min-width: 992px){
+    .col-lg-4 {
+        -ms-flex: 0 0;
+        flex: 0 0 auto;
+        max-width: 33.333333%;
+        }
+    
+    nav > .container-fluid{
+            padding-left: 2vw;
+            padding-right: 2vw;
+            }
+    
+            #logo,#login{
+                border-color:#666666; 
+                border-right-style: dashed;
+                border-width:1px;
+                padding-left: 1px;
+            }
+    
+            
+    }
+    
+    section >.row{
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    
+    }
+
+
+
+    
+.dropdown-menu {
+    width: 300px !important;
+}
+.b-0 {
+    bottom: 0;
+}
+.bg-shadow {
+    background: rgba(76, 76, 76, 0);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(179, 171, 171, 0)), color-stop(49%, rgba(48, 48, 48, 0.37)), color-stop(100%, rgba(19, 19, 19, 0.8)));
+    background: linear-gradient(to bottom, rgba(179, 171, 171, 0) 0%, rgba(48, 48, 48, 0.71) 49%, rgba(19, 19, 19, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+}
+.top-indicator {
+    right: 0;
+    top: 1rem;
+    bottom: inherit;
+    left: inherit;
+    margin-right: 1rem;
+}
+.overflow {
+    position: relative;
+    overflow: hidden;
+}
+.zoom img {
+    transition: all 0.2s linear;
+}
+.zoom:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+#botones{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.verticalLine {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
