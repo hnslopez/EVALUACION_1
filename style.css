@@ -10,6 +10,24 @@
 
 }
 
+#divisa{
+    -moz-user-select: none; 
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none; 
+    
+}
+
+.noticia-main{
+    text-align: justify;
+
+}
+
+
+#OpenLayers_Control_Attribution_7{
+    z-index: 0 !important;
+    color: rgba(0, 0, 0, 0);
+}
 
 .carousel{
     width: 100%;
@@ -124,3 +142,11 @@
 }
 
 
+/* eso lo agrege nuevo*/
+
+#pa{
+    
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+}
