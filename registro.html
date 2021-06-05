@@ -19,6 +19,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
  
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark  navbar-custom sticky-top">
             <div class="container-fluid" id="navbar">
@@ -107,19 +110,18 @@
                     <div class="row">
                         <div class="col-lg-10 col-xl-7 mx-auto">
                             <h3 class="display-4">Registro</h3>
-                            <form>
-
+                          <form action="./index-login.html" method="POST" id="register-action">
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="text" placeholder="Nombre" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="name" name="name" type="text" placeholder="Nombre"  autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="text" placeholder="Correo" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="email" name="email" type="text" placeholder="Correo" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="password" placeholder="Contraseña" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="password" name="password" type="password" placeholder="Contraseña" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>    
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="password" placeholder="Confirmar Contraseña" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="confirmPass" name="confirmPass" type="password" placeholder="Confirmar Contraseña" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>                       
                                 <button type="submit" class="btn btn-dark btn-block text-uppercase mb-2 mt-4 rounded-0 shadow-sm">Registrar</button>
                                 <div class="pt-4"></div>
@@ -174,16 +176,19 @@
           <h6 class="text-uppercase font-weight-bold mb-4">NOTICIAS</h6>
           <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
           <div class="rounded border">
-            <div class="input-group">
-              <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link btn-search">
-                   <img src="image/kisspng-airplane-paper-plane-icon-design-icon-paper-icon-cliparts-5a84ba0536f610.5484663315186478132251.png" style="filter: invert(1);" height="20px" width="20px" alt=""></i>
-                </button>
-              </div>
-
-            </div>
+            <form class="input-group" id="ultimas-noticias">
+              <input id="email-news" name="email-news" type="email" class="form-control form-control-sm" placeholder="Ingresa tu Email"
+                    aria-label="Your email" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                      <button id="button-addon1" type="submit" title="send" class="btn btn-link btn-search">
+                          <img src="image/kisspng-airplane-paper-plane-icon-design-icon-paper-icon-cliparts-5a84ba0536f610.5484663315186478132251.png"
+                              style="filter: invert(1);" height="20px" width="20px" alt=""></i>
+                      </button>
+                  </div>
+              </form>
           </div>
+          <div id="errorTxt">
+            <div id="error"></div>
         </div>
       </div>
     </div>
@@ -195,6 +200,127 @@
       </div>
     </div>
   </footer>
+  <script>
+    $('#register-action').validate(
+      {
+        rules:{
+            name:{
+              required:true,
+            },
+            password:{
+              required:true,
+              minlength : 6
+            },
+            email:{
+              required:true,
+              email:true
+            },
+            confirmPass:{
+              required:true,
+              equalTo : "#password",
+              minlength : 6
+            }
+         
+            
+      }, 
+      messages :{
+        name:{
+              required:"Se requiere un nombre",
+            },
+            password:{
+              required:"Se requiere una contraseña",
+              minlength : "Debe ingresar un minimo de 6."
+            },
+            email:{
+              required:"Se requiere de un correo.",
+              email:"Debe ingresar un correo."
+            },
+            confirmPass:{
+              required:"Debe ingresar una contaseña",
+              equalTo : "Debe ser igual a la contraseña ingresada.",
+              minlength : "Debe ingresar un minimo de 6."
+            }
+         
+        },
+        errorPlacement: function(error, element) {
+          var customError = $([
+              `<span class="invalid-feedback d-block" id="${element.attr('name')}-error">`,
+              '  <span class="mb-0 d-block">',
+              '    <span class="initialism form-error-icon badge badge-danger" style="color: black;">Error</span>',
+              '  </span>',
+              '</span>'
+              ].join(""));
+
+              error.addClass("form-error-message");
+
+              error.appendTo(customError.find("span.mb-0"));
+
+              customError.insertAfter(element);
+              
+
+          },
+          success:function(label){
+            var parentId = $(label).attr('id')
+            switch (parentId) {
+              case 'name-error':
+               $('#name-error').empty();
+                break;
+              case 'email-error':
+              $('#email-error').empty();
+
+                break;             
+              case 'password-error':
+              $('#password-error').empty();
+                break;
+              case 'confirmPass-error':
+              $('#confirmPass-error').empty();
+
+                break;
+
+            }              
+          }
+    }
+    );
+
+    $("#ultimas-noticias").validate({
+        rules:{
+            "email-news": {
+                required: true,
+                email: true
+            }
+        },
+        messages :{
+            "email-news":{
+                required:'Debe ingresar un correo',
+                email:'Ingrese un correo valido'
+            }
+        },
+        errorPlacement: function(error, element) {
+
+            var customError = $([
+                '<span class="invalid-feedback d-block">',
+                '  <span class="mb-0 d-block">',
+                '    <span class="initialism form-error-icon badge badge-danger">Error</span>',
+                '  </span>',
+                '</span>'
+                ].join(""));
+
+                error.addClass("form-error-message");
+
+                error.appendTo(customError.find("span.mb-0"));
+
+                $('#errorTxt').empty();
+                $('#errorTxt').append('<div id="error"></div>');
+                customError.insertAfter('#error');
+                
+
+        }
+    });
+
+
+</script>
+
+
 </body>
 
 

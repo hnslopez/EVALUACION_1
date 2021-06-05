@@ -11,492 +11,671 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <title>Pagina Principal</title>
+    <title>Cuenta</title>
 </head>
 
 <body>
     <!-- JavaScript Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
  
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark  navbar-custom sticky-top">
-            <div class="container-fluid" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark  navbar-custom sticky-top">
+          <div class="container-fluid" id="navbar">
 
-                <a class="navbar-brand d-lg-none" href="#">
-                    <img src="image/Daco_4864616.png" alt="" width="100" height="24"
-                        class="d-inline-block align-text-top">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <div class="navbar-nav col-md-6 justify-content-md-start">
-                        <div class="navbar-nav justify-content-center" id="logo">
-                            <a class="navbar-brand d-none d-lg-block text-lg-center" href="index.html">
-                                <img src="image/Daco_4864616.png" alt="" width="100" height="24"
-                                    class="d-inline-block align-text-top">
+              <a class="navbar-brand d-lg-none" href="#">
+                  <img src="image/Daco_4864616.png" alt="" width="100" height="24"
+                      class="d-inline-block align-text-top">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                  <div class="navbar-nav col-md-6 justify-content-md-start">
+                      <div class="navbar-nav justify-content-center" id="logo">
+                          <a class="navbar-brand d-none d-lg-block text-lg-center" href="index.html">
+                              <img src="image/Daco_4864616.png" alt="" width="100" height="24"
+                                  class="d-inline-block align-text-top">
+                          </a>
+                      </div>
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Deportes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Politica</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Ciencias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Coronavirus</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Economia</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              periodistas
                             </a>
-                        </div>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Deportes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Politica</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Ciencias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Coronavirus</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Economia</a>
-                            </li>
-                            <li class="nav-item dropdown ">
-                                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  periodistas
-                                </a>
-                                <ul class="dropdown-menu bg-dark text-white rounded-0 border-top-0 border-light" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu bg-dark text-white rounded-0 border-top-0 border-light" aria-labelledby="navbarDropdown">
 
-                                  <li><a class="dropdown-item text-white-50 bg-dark nav-link" href="#">JOSE ANDRES (<span class="badge badge-pill">1</span>)</a></li>
-                                  <li><a class="dropdown-item text-white-50 bg-dark nav-link" href="#">JESUS ANTONIO (<span class="badge badge-pill ">6</span>)</a></li>
-                                </ul>
+                              <li><a class="dropdown-item text-white-50 bg-dark nav-link" href="#">JOSE ANDRES (<span class="badge badge-pill">1</span>)</a></li>
+                              <li><a class="dropdown-item text-white-50 bg-dark nav-link" href="#">JESUS ANTONIO (<span class="badge badge-pill ">6</span>)</a></li>
+                            </ul>
+                          </li>
+                    </ul>
+                  </div>
+
+                  <div class="navbar-nav col-md-6 justify-content-md-end">
+                      <ul class="navbar-nav">
+                          <li class="nav-item active">
+                              <a class="nav-link" href="#">PUBLICACIONES TOTALES (<span class="badge badge-pill badge-primary"">4</span>)</a>
+                          </li>
+                          <li class="nav-item dropdown ">
+                              <span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;">2</span>
+
+                              <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Fernando S.
+                              </a>
+                              <ul class="dropdown-menu bg-dark text-white rounded-0 border-top-0 border-light" aria-labelledby="navbarDropdown">
+                                <li class="nav-item">
+                                  <span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;">2</span>
+                                  <a class="nav-link" href="account.html">PUBLICACIONES</a>
                               </li>
-                        </ul>
-                    </div>
+                              <li>
+                                  <a class="nav-link" href="Publicar.html">Crear publicación</a>
 
-                    <div class="navbar-nav col-md-6 justify-content-md-end">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                               
-
-                                <a class="nav-link" href="#">PUBLICACIONES TOTALES (<span class="badge badge-pill badge-primary"">4</span>)</a>
-                            </li>
-                            <li class="nav-item dropdown ">
-                                <span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;">2</span>
-
-                                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Fernando S.
-                                </a>
-                                <ul class="dropdown-menu bg-dark text-white rounded-0 border-top-0 border-light" aria-labelledby="navbarDropdown">
-                                  <li class="nav-item">
-                                    <span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;">2</span>
-                                    <a class="nav-link" href="account.html">PUBLICACIONES</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="Publicar.html">Crear publicación</a>
-
-                                </li>
-                                </ul>
                               </li>
+                              </ul>
+                            </li>
 
 
-                        </ul>
-                    </div>
-                </div>
+                      </ul>
+                  </div>
+              </div>
 
-            </div>
+          </div>
 
-    </nav>
+  </nav>
 
 <!--BODY-->
+  <!--BODY-->
+  <div class="container">
+    <div class="row mb-5">
 
-    <div class="container pb-4  justify-content-end pt-4">
-        
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="categoría, periodista, palabra clave...">
-              <span class="input-group-btn">
-                <button class="btn btn-search" type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                      </svg>
-                </i>Buscar</button>
-              </span>
+    </div>
+
+    <!--start code-->
+    <div class="row py-2">
+        <!--Breaking box-->
+        <div class="col-1 col-md-3 col-lg-2 py-1 pr-md-0 mb-md-1">
+            <div class="d-inline-block d-md-block bg-dark text-white text-center breaking-caret py-1 px-2">
+                <span class="fas fa-bolt" title="DIVISA"></span>
+                <span class="d-none d-md-inline-block">DIVISA</span>
+            </div>
         </div>
-        
-    </div>
-    <div class="container text-center bg-dark text-white">
-        <h4 class="display-5 py-2">TENDENCIA</h4>
-    </div>
+        <!--Breaking content-->
+        <div class="col-11 col-md-9 col-lg-10 pl-1 pl-md-2">
+            <div class="breaking-box pt-2 pb-1">
+                <!--marque-->
+                <marquee direction="left" id="divisa">
 
-    <div class="container final">
-        <div class="row">
-            <div class="col-12 pb-4">
-                <section class="row">
-                    <div class="col-12 d-md-flex justify-content-between">
-                        <div id="featured" class="carousel slide carousel my-md-2 mx-md-2" data-ride="carousel">
-                            <div class="carousel-indicators top-indicator">
+                </marquee>
+            </div>
+        </div>
+    </div>
+    <!--end code-->
+</div>
+<div class="container pb-4  justify-content-end pt-4">
+    <form id="buscar-form">
+        <div class="input-group">
+            <input type="text" name="buscar" id="buscar" class="form-control" placeholder="categoría, periodista, palabra clave...">
+            <span class="input-group-btn">
+                <button  type="submit" class="btn btn-search" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                    </i>Buscar</button>
+            </span>
+        </div>
+        <div id="errorBuscar" title="errores">
+            <div id="errorr"></div>
+        </div>
+    </form>
 
-                                <button type="button" data-bs-target="#featured" data-bs-slide-to="0" class="active"
-                                    aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#featured" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#featured" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                            </div>
-                            <div class="card border-0 rounded-0 text-light overflow">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="card border-0 rounded-0 text-light overflow zoom">
-                                            <div class="position-relative">
-                                                <div class="ratio_left-cover-1 image-wrapper">
-                                                    <a href="">
-                                                        <img class="img-fluid w-100"
-                                                            src="https://bootstrap.news/source/img1.jpg" alt="Lorem">
-                                                    </a>
-                                                </div>
-                                                <div
-                                                    class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow text-background">
-                                                    <a href="">
-                                                        <h4 class="h4 post-title text-white my-1">Lorem</h4>
-                                                    </a>
-                                                    <div class="news-meta">
-                                                        <span class="news-author">by <a
-                                                                class="text-white font-weight-bold"
-                                                                href="../category/author.html">Jennifer</a></span>
-                                                        <span class="news-date">Oct 22, 2019</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="card border-0 rounded-0 text-light overflow zoom">
-                                            <div class="position-relative">
-                                                <!--thumbnail img-->
-                                                <div class="ratio_left-cover-1 image-wrapper">
-                                                    <a href="">
-                                                        <img class="img-fluid w-100"
-                                                            src="https://bootstrap.news/source/img2.jpg"
-                                                            alt="Bootstrap news theme">
-                                                    </a>
-                                                </div>
-                                                <div
-                                                    class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow text-background">
-                                                    <!--title-->
-                                                    <a href="">
-                                                        <h4 class="h4 post-title text-white my-1">DEPORTES</h4>
-                                                    </a>
-                                                    <!-- meta title -->
-                                                    <div class="news-meta">
-                                                        <span class="news-author">by <a
-                                                                class="text-white font-weight-bold"
-                                                                href="../category/author.html">Jennifer</a></span>
-                                                        <span class="news-date">Oct 22, 2019</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="card border-0 rounded-0 text-light overflow zoom">
-                                            <div class="position-relative">
-                                                <!--thumbnail img-->
-                                                <div class="ratio_left-cover-1 image-wrapper">
-                                                    <a href="">
-                                                        <img class="img-fluid w-100"
-                                                            src="https://bootstrap.news/source/img3.jpg" alt="Lorem">
-                                                    </a>
-                                                </div>
-                                                <div
-                                                    class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow text-background">
-                                                    <!--title-->
-                                                    <a href="">
-                                                        <h4 class="h4 post-title text-white my-1">Bank chief warns on
-                                                            Brexit staff moves to other company</h4>
-                                                    </a>
-                                                    <!-- meta title -->
-                                                    <div class="news-meta">
-                                                        <span class="news-author">by <a
-                                                                class="text-white font-weight-bold"
-                                                                href="../category/author.html">Jennifer</a></span>
-                                                        <span class="news-date">Oct 22, 2019</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#featured"
-                                    data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#featured"
-                                    data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
+
+
+</div>
+<div class="container text-center bg-dark text-white">
+    <h4 class="display-5 py-2">TENDENCIA</h4>
+</div>
+
+<div class="container final">
+    <div class="row">
+        <div class="col-12 pb-4">
+            <section class="row">
+                <div class="col-12 d-md-flex justify-content-between">
+                    <div id="featured" class="carousel slide carousel my-md-2 mx-md-2" data-ride="carousel">
+                        <div class="carousel-indicators top-indicator">
+
+                            <button type="button" data-bs-target="#featured" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#featured" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#featured" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
                         </div>
-
-
-                        <div class="col-12 col-md-6 pt-2 pl-md-1 mb-3 mb-lg-4">
-                            <div class="row">
-                                <!--news box-->
-                                <div class="col-6 pb-1 pt-0 pr-1 carousel-right">
-                                    <div class="card border-0 rounded-0 text-white overflow zoom">
+                        <div class="card border-0 rounded-0 text-light overflow">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="card border-0 rounded-0 text-light overflow zoom">
                                         <div class="position-relative">
-                                            <!--thumbnail img-->
-                                            <div class="ratio_right-cover-2 image-wrapper">
+                                            <div class="ratio_left-cover-1 image-wrapper">
                                                 <a href="">
-                                                    <img class="img-fluid" src="https://bootstrap.news/source/img5.jpg"
-                                                        alt="simple blog template bootstrap">
+                                                    <img class="img-fluid w-100"
+                                                        src="https://bootstrap.news/source/img1.jpg" alt="Lorem">
                                                 </a>
                                             </div>
-                                            <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
-                                                <!-- category -->
-                                                <a class="p-1 badge badge-primary rounded-0" href="">Lifestyle</a>
-
-                                                <!--title-->
+                                            <div
+                                                class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow text-background">
                                                 <a href="">
-                                                    <h4 class="h5 text-white my-1">Should you see the Fantastic Beasts
-                                                        sequel?</h4>
+                                                    <h4 class="h4 post-title text-white my-1">Lorem</h4>
                                                 </a>
+                                                <div class="news-meta">
+                                                    <span class="news-author">by <a
+                                                            class="text-white font-weight-bold"
+                                                            href="../category/author.html">Jennifer</a></span>
+                                                    <span class="news-date">Oct 22, 2019</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!--news box-->
-                                <div class="col-6 pb-1 pl-1 pt-0 carousel-right">
-                                    <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="carousel-item">
+                                    <div class="card border-0 rounded-0 text-light overflow zoom">
                                         <div class="position-relative">
                                             <!--thumbnail img-->
-                                            <div class="ratio_right-cover-2 image-wrapper">
+                                            <div class="ratio_left-cover-1 image-wrapper">
                                                 <a href="">
-                                                    <img class="img-fluid" src="https://bootstrap.news/source/img6.jpg"
-                                                        alt="bootstrap templates for blog">
+                                                    <img class="img-fluid w-100"
+                                                        src="https://bootstrap.news/source/img2.jpg"
+                                                        alt="Bootstrap news theme">
                                                 </a>
                                             </div>
-                                            <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
-                                                <!-- category -->
-                                                <a class="p-1 badge badge-primary rounded-0" href="">Motocross</a>
+                                            <div
+                                                class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow text-background">
                                                 <!--title-->
                                                 <a href="">
-                                                    <h4 class="h5 text-white my-1">Three myths about Florida elections
-                                                        recount</h4>
+                                                    <h4 class="h4 post-title text-white my-1">Lorem</h4>
                                                 </a>
+                                                <!-- meta title -->
+                                                <div class="news-meta">
+                                                    <span class="news-author">by <a
+                                                            class="text-white font-weight-bold"
+                                                            href="../category/author.html">Jennifer</a></span>
+                                                    <span class="news-date">Oct 22, 2019</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!--news box-->
-                                <div class="col-6 pb-1 pr-1 pt-1 carousel-right">
-                                    <div class="card border-0 rounded-0 text-white overflow zoom">
+                                <div class="carousel-item">
+                                    <div class="card border-0 rounded-0 text-light overflow zoom">
                                         <div class="position-relative">
                                             <!--thumbnail img-->
-                                            <div class="ratio_right-cover-2 image-wrapper">
+                                            <div class="ratio_left-cover-1 image-wrapper">
                                                 <a href="">
-                                                    <img class="img-fluid" src="https://bootstrap.news/source/img7.jpg"
-                                                        alt="bootstrap blog wordpress theme">
+                                                    <img class="img-fluid w-100"
+                                                        src="https://bootstrap.news/source/img3.jpg" alt="Lorem">
                                                 </a>
                                             </div>
-                                            <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
-                                                <!-- category -->
-                                                <a class="p-1 badge badge-primary rounded-0" href="">Fitness</a>
+                                            <div
+                                                class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow text-background">
                                                 <!--title-->
                                                 <a href="">
-                                                    <h4 class="h5 text-white my-1">Finding Empowerment in Two Wheels and
-                                                        a Helmet</h4>
+                                                    <h4 class="h4 post-title text-white my-1">Bank chief warns on
+                                                        Brexit staff moves to other company</h4>
                                                 </a>
+                                                <!-- meta title -->
+                                                <div class="news-meta">
+                                                    <span class="news-author">by <a
+                                                            class="text-white font-weight-bold"
+                                                            href="../category/author.html">Jennifer</a></span>
+                                                    <span class="news-date">Oct 22, 2019</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#featured"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#featured"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
 
-                                <div class="col-6 pb-1 pl-1 pt-1 carousel-right">
-                                    <div class="card border-0 rounded-0 text-white overflow zoom">
-                                        <div class="position-relative">
-                                            <div class="ratio_right-cover-2 image-wrapper">
-                                                <a href="">
-                                                    <img class="img-fluid" src="https://bootstrap.news/source/img8.jpg"
-                                                        alt="">
-                                                </a>
-                                            </div>
-                                            <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
-                                                <a class="p-1 badge badge-primary rounded-0" href="">Adventure</a>
-                                                <a href="">
-                                                    <h4 class="h5 text-white my-1">Ditch receipts and four other tips to
-                                                        be a shopper</h4>
-                                                </a>
-                                            </div>
+
+                    <div class="col-12 col-md-6 pt-2 pl-md-1 mb-3 mb-lg-4">
+                        <div class="row">
+                            <!--news box-->
+                            <div class="col-6 pb-1 pt-0 pr-1 carousel-right">
+                                <div class="card border-0 rounded-0 text-white overflow zoom">
+                                    <div class="position-relative">
+                                        <!--thumbnail img-->
+                                        <div class="ratio_right-cover-2 image-wrapper">
+                                            <a href="seccion.html">
+                                                <img class="img-fluid" src="https://bootstrap.news/source/img5.jpg"
+                                                    alt="simple blog template bootstrap">
+                                            </a>
+                                        </div>
+                                        <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                            <!-- category -->
+                                            <a class="p-1 badge badge-primary rounded-0" href="">Lifestyle</a>
+
+                                            <!--title-->
+                                            <a>
+                                                <h4 class="h5 text-white my-1">Noticia test!</h4>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--news box-->
+                            <div class="col-6 pb-1 pl-1 pt-0 carousel-right">
+                                <div class="card border-0 rounded-0 text-white overflow zoom">
+                                    <div class="position-relative">
+                                        <!--thumbnail img-->
+                                        <div class="ratio_right-cover-2 image-wrapper">
+                                            <a href="">
+                                                <img class="img-fluid" src="https://bootstrap.news/source/img6.jpg"
+                                                    alt="bootstrap templates for blog">
+                                            </a>
+                                        </div>
+                                        <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                            <!-- category -->
+                                            <a class="p-1 badge badge-primary rounded-0" href="">Motocross</a>
+                                            <!--title-->
+                                            <a href="">
+                                                <h4 class="h5 text-white my-1">Three myths about Florida elections
+                                                    recount</h4>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--news box-->
+                            <div class="col-6 pb-1 pr-1 pt-1 carousel-right">
+                                <div class="card border-0 rounded-0 text-white overflow zoom">
+                                    <div class="position-relative">
+                                        <!--thumbnail img-->
+                                        <div class="ratio_right-cover-2 image-wrapper">
+                                            <a href="">
+                                                <img class="img-fluid" src="https://bootstrap.news/source/img7.jpg"
+                                                    alt="bootstrap blog wordpress theme">
+                                            </a>
+                                        </div>
+                                        <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                            <!-- category -->
+                                            <a class="p-1 badge badge-primary rounded-0" href="">Fitness</a>
+                                            <!--title-->
+                                            <a href="">
+                                                <h4 class="h5 text-white my-1">Finding Empowerment in Two Wheels and
+                                                    a Helmet</h4>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 pb-1 pl-1 pt-1 carousel-right">
+                                <div class="card border-0 rounded-0 text-white overflow zoom">
+                                    <div class="position-relative">
+                                        <div class="ratio_right-cover-2 image-wrapper">
+                                            <a href="">
+                                                <img class="img-fluid" src="https://bootstrap.news/source/img8.jpg"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                        <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                            <a class="p-1 badge badge-primary rounded-0" href="">Adventure</a>
+                                            <a href="">
+                                                <h4 class="h5 text-white my-1">Ditch receipts and four other tips to
+                                                    be a shopper</h4>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
     </div>
-    <div class="container bg-dark text-white text-center text">
-        <h4 class="display-5 py-2">RECIENTE</h4>
+</div>
+<div class="container bg-dark text-white text-center text">
+    <h4 class="display-5 py-2">RECIENTE</h4>
 
-    </div>
+</div>
 
-    <div class="container final">
-        <div class="row">
-            <div class="col-md-4 py-4">
-                <div class="titulo">
-                    <h4>COVID</h4>
-                </div>
-                <div class="noticia-main">
+<div class="container final">
+    <div class="row">
+        <div class="col-md-4 py-4">
+            <div class="titulo">
+                <h4>COVID</h4>
+            </div>
+            <div class="noticia-main">
+                <h5>Scroll down to see the Navbar stick</h5>
+
+                <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code
+                    editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable
+                    mixtape swag wolf squid tote bag. Tote bag cronut semiotics,
+                    raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean
+                    shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan
+                    cliche semiotics ugh synth chillwave meditation.
+                    Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master
+                    cleanse hella DIY 90's blog.</p>
+
+                <hr>
+            </div>
+            <div class="noticia-main">
+                <h5>Scroll down to see the Navbar stick</h5>
+
+                <p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher street art Carles, stumptown gluten-free
+                    Kickstarter artisan Wes Anderson wolf pug. Godard sustainable you probably haven't heard of
+                    them, vegan farm-to-table Williamsburg slow-carb
+                    readymade disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche American Apparel
+                    whatever. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply
+                    PBR selfies. Banh mi McSweeney's Shoreditch selfies,
+                    forage fingerstache food truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.
+                </p>
+
+                <hr>
+            </div>
+
+
+        </div>
+        <div class="col-md-4 py-4">
+
+            <div class="titulo">
+                <h4>DEPORTES</h4>
+            </div>
+            <div class="noticia-main">
+                <div class="position-relative">
                     <h5>Scroll down to see the Navbar stick</h5>
-
                     <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code
-                        editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable
-                        mixtape swag wolf squid tote bag. Tote bag cronut semiotics,
-                        raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean
-                        shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan
-                        cliche semiotics ugh synth chillwave meditation.
+                        editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal
+                        sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics,
+                        raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future
+                        jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick
+                        artisan cliche semiotics ugh synth chillwave meditation.
                         Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master
                         cleanse hella DIY 90's blog.</p>
-
-                    <hr>
-                </div>
-                <div class="noticia-main">
-                    <h5>Scroll down to see the Navbar stick</h5>
-
-                    <p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher street art Carles, stumptown gluten-free
-                        Kickstarter artisan Wes Anderson wolf pug. Godard sustainable you probably haven't heard of
-                        them, vegan farm-to-table Williamsburg slow-carb
-                        readymade disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche American Apparel
-                        whatever. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply
-                        PBR selfies. Banh mi McSweeney's Shoreditch selfies,
-                        forage fingerstache food truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.
-                    </p>
-
-                    <hr>
-                </div>
-
-
-            </div>
-            <div class="col-md-4 py-4">
-
-                <div class="titulo">
-                    <h4>DEPORTES</h4>
-                </div>
-                <div class="noticia-main">
-                    <div class="position-relative">
-                        <h5>Scroll down to see the Navbar stick</h5>
-                        <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code
-                            editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal
-                            sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics,
-                            raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future
-                            jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick
-                            artisan cliche semiotics ugh synth chillwave meditation.
-                            Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master
-                            cleanse hella DIY 90's blog.</p>
-                        <div class="ratio_right-cover-2 image-wrapper">
-                            <a href="">
-                                <img class="img-fluid" src="https://bootstrap.news/source/img7.jpg"
-                                    alt="bootstrap blog wordpress theme">
-                            </a>
-                        </div>
-                        <hr>
-
+                    <div class="ratio_right-cover-2 image-wrapper">
+                        <a href="">
+                            <img class="img-fluid" src="https://bootstrap.news/source/img7.jpg"
+                                alt="bootstrap blog wordpress theme">
+                        </a>
                     </div>
-                </div>
+                    <hr>
 
+                </div>
             </div>
-            <div class="col-md-4 py-4">
-                <div class="titulo">
-                    <h4>ECONOMIA</h4>
-                </div>
-                <div class="noticia-main">
-                    <div class="position-relative">
-                        <div class="ratio_right-cover-2 image-wrapper">
-                            <a href="">
-                                <img class="img-fluid" src="https://bootstrap.news/source/img7.jpg"
-                                    alt="bootstrap blog wordpress theme">
-                            </a>
-                        </div>
-                        <h5>Scroll down to see the Navbar stick</h5>
-                        <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code
-                            editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal
-                            sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics,
-                            raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future
-                            jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick
-                            artisan cliche semiotics ugh synth chillwave meditation.
-                            Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master
-                            cleanse hella DIY 90's blog.</p>
-                        <hr>
-                    </div>
-                </div>
 
+        </div>
+        <div class="col-md-4 py-4">
+            <div class="titulo">
+                <h4>ULTIMO SISMO</h4>
             </div>
+            <div class="noticia-main">
+                <div class="position-relative">
+                    <div id="mapdiv" style="width: 100%;
+                    height:300px"></div>
+                </div>
+                <div class="position-relative" id="text_sismo">
+                </div>
+            </div>
+
         </div>
     </div>
+</div>
 
-    
+
 
 <!-- FOOTER-->
 <footer style="overflow: hidden;
 " class="bg-dark text-white">
     <div class="container py-5">
-      <div class="row py-4">
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
-          <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-          <ul class="list-inline mt-4">
-            <li class="list-inline-item"><a href="#" target="_blank" title="twitter">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                  </svg>
-            </a></li>
-            <li class="list-inline-item"><a href="#" target="_blank" title="facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                  </svg>
-            </a></li>
-            <li class="list-inline-item"><a href="#" target="_blank" title="instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                  </svg>
-            </a></li>
+        <div class="row py-4">
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+                <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod tempor incididunt.</p>
+                <ul class="list-inline mt-4">
+                    <li class="list-inline-item"><a href="#" target="_blank" title="twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-twitter" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                            </svg>
+                        </a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank" title="facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg>
+                        </a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank" title="instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                            </svg>
+                        </a></li>
 
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-          <h6 class="text-uppercase font-weight-bold mb-4">CONTACTO</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="#" class="text-muted">FONO</a></li>
-            <li class="mb-2"><a href="contacto.html" class="text-muted">CONTACTO</a></li>
-            <li class="mb-2"><a href="#" class="text-muted">EMAIL</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-lg-0">
-          <h6 class="text-uppercase font-weight-bold mb-4">NOTICIAS</h6>
-          <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
-          <div class="rounded border">
-            <div class="input-group">
-              <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link btn-search">
-                   <img src="image/kisspng-airplane-paper-plane-icon-design-icon-paper-icon-cliparts-5a84ba0536f610.5484663315186478132251.png" style="filter: invert(1);" height="20px" width="20px" alt=""></i>
-                </button>
-              </div>
-
+                </ul>
             </div>
-          </div>
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold mb-4">CONTACTO</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="text-muted">FONO</a></li>
+                    <li class="mb-2"><a href="contacto.html" class="text-muted">CONTACTO</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">EMAIL</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold mb-4">NOTICIAS</h6>
+                <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque
+                    temporibus.</p>
+                <div class="rounded border">
+                        <form class="input-group" id="ultimas-noticias">
+          <input id="email-news" name="email-news" type="email" class="form-control form-control-sm" placeholder="Ingresa tu Email"
+                              aria-label="Your email" aria-describedby="basic-addon2" data-error="#errNm2" >
+                            <div class="input-group-append">
+                                <button id="button-addon1" type="submit" class="btn btn-link btn-search">
+                                    <img src="image/kisspng-airplane-paper-plane-icon-design-icon-paper-icon-cliparts-5a84ba0536f610.5484663315186478132251.png"
+                                        style="filter: invert(1);" height="20px" width="20px" alt=""></i>
+                                </button>
+                            </div>
+                        </form>
+
+                </div>
+                <div id="errorTxt">
+                    <div id="error"></div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- Copyrights -->
     <div class="bg-dark py-4">
-      <div class="container text-center">
-        <p class="text-muted mb-0 py-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem voluptatibus exercitationem ea aliquam saepe incidunt, perspiciatis voluptas. Perspiciatis veniam in, numquam est illo neque iste optio aperiam ipsa alias voluptas!</p>
-      </div>
+        <div class="container text-center">
+            <p class="text-muted mb-0 py-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
+                voluptatibus exercitationem ea aliquam saepe incidunt, perspiciatis voluptas. Perspiciatis veniam
+                in, numquam est illo neque iste optio aperiam ipsa alias voluptas!</p>
+        </div>
     </div>
-  </footer>
+</footer>
+
+<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+<script>
+    $(document).ready(() => {
+        $.get('https://mindicador.cl/api', (data) => {
+
+            $.each(data, (i, item) => {
+
+                if (item.codigo != undefined) {
+                    if (item.unidad_medida == 'Dólar') {
+                        
+                        $("#divisa").append(`
+                    ${item.nombre}: ${item.valor.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}&emsp;&emsp; `);
+
+                    } else if (item.unidad_medida == 'Pesos') {
+                        $("#divisa").append(`
+                    ${item.nombre}: ${item.valor.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}&emsp;&emsp; `);
+                    } else if (item.unidad_medida == 'Porcentaje') {
+                        $("#divisa").append(`
+                    ${item.nombre}: ${((item.valor) / 10).toFixed(2).toLocaleString('en-US', { style: 'percent' })}% &emsp;&emsp; `);
+                    } else {
+                        $("#divisa").append(`
+                    ${item.nombre}: ${item.valor}&emsp;&emsp; `);
+
+                    }
+                }
+            });
+        });
+
+
+        $.get('https://api.gael.cloud/general/public/sismos',(data)=>{
+            map = new OpenLayers.Map("mapdiv");
+                map.addLayer(new OpenLayers.Layer.OSM());
+            
+                var lonLat = new OpenLayers.LonLat( data[0].Longitud ,data[0].Latitud )
+                    .transform(
+                        new OpenLayers.Projection("EPSG:4326"),
+                        map.getProjectionObject() 
+                    );
+                                    
+                var markers = new OpenLayers.Layer.Markers( "Markers" );
+                map.addLayer(markers);
+                
+                markers.addMarker(new OpenLayers.Marker(lonLat));
+                
+                map.setCenter (lonLat, 4);
+
+                $("#text_sismo").append(
+                    `
+                    <h5>${data[0].Fecha}</h5>
+                    <p>A ${data[0].RefGeografica} se registro un sismo de magnito ${data[0].Magnitud} por la agencia ${data[0].Agencia} a una profundidad de ${data[0].Profundidad} metros.
+                    <br>
+                    <br>
+                    Anteriormente el ${data[1].Fecha} se habia registrado un sismo de ${data[1].Magnitud} a ${data[1].RefGeografica} por la agencia ${data[1].Agencia} a una profundidad de ${data[1].Profundidad} metros.</p>
+                    `
+                )
+        });
+
+    });
+</script>
+<script>
+        $(document).ready(()=> {
+
+        $("#buscar-form").validate({
+            rules:{
+                buscar:{
+                    required:true
+                }
+            },
+            messages:{
+                    buscar:{
+                    required:'Debe escribir una palabra.'
+            }
+            },
+            errorPlacement: function(error, element) {
+
+                var customError = $([
+                     `<span class="invalid-feedback d-block" id="${element.attr('name')}-errors">`,
+                    '  <span class="mb-0 d-block">',
+          '    <span class="initialism form-error-icon badge badge-danger" style="color: black;">Error</span>',
+                    '  </span>',
+                    '</span>'
+                    ].join(""));
+
+                    error.addClass("form-error-message");
+
+                    error.appendTo(customError.find("span.mb-0"));
+
+                    $('#errorBuscar').empty();
+                    $('#errorBuscar').append('<div id="errorr"></div>');
+                    customError.insertAfter('#errorr');
+                    
+
+            },
+            success:function(label){
+                $(`#errorBuscar`).empty();       
+                }      
+            });
+
+        $("#ultimas-noticias").validate({
+            rules:{
+                "email-news": {
+                    required: true,
+                    email: true
+                }
+            },
+            messages :{
+                "email-news":{
+                    required:'Debe ingresar un correo',
+                    email:'Ingrese un correo valido'
+                }
+            },
+            errorPlacement: function(error, element) {
+
+                var customError = $([
+                     `<span class="invalid-feedback d-block" id="${element.attr('name')}-errors">`,
+                    '  <span class="mb-0 d-block">',
+                    '    <span class="initialism form-error-icon badge badge-danger">Error</span>',
+                    '  </span>',
+                    '</span>'
+                    ].join(""));
+
+                    error.addClass("form-error-message");
+
+                    error.appendTo(customError.find("span.mb-0"));
+
+                    $('#errorTxt').empty();
+                    $('#errorTxt').append('<div id="error"></div>');
+                    customError.insertAfter('#error');
+                    
+
+            },
+                success:function(label){
+                    var parentId = $(label).attr('id');
+                    $(`#${parentId}s`).empty();       
+                }      
+            });
+        });
+
+</script>
+
+
 </body>
+
 
 </html>
