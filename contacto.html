@@ -19,7 +19,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
- 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark  navbar-custom sticky-top">
             <div class="container-fluid" id="navbar">
 
@@ -108,22 +110,21 @@
                     <div class="row">
                         <div class="col-lg-10 col-xl-7 mx-auto">
                             <h3 class="display-4">Contacto</h3>
-                            <form>
-
+                            <form  id="contacto_form" method="POST">
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="text" placeholder="Nombre" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="name" type="text" name="name" placeholder="Nombre"  autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="text" placeholder="Apellido" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="last_name" name="last_name" type="text" placeholder="Apellido"  autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="text" placeholder="Correo" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="email" type="email" name="email" placeholder="Correo"  autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="text" placeholder="Numero de telefono" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="phone" name="phone" type="text" placeholder="Numero de telefono" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>                            
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Mensaje" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea id="message" name="message" class="form-control" placeholder="Mensaje" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-dark btn-block text-uppercase mb-2 mt-4 rounded-0 shadow-sm">Enviar</button>
                                 <div class="pt-4"></div>
@@ -178,16 +179,20 @@
           <h6 class="text-uppercase font-weight-bold mb-4">NOTICIAS</h6>
           <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
           <div class="rounded border">
-            <div class="input-group">
-              <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link btn-search">
-                   <img src="image/kisspng-airplane-paper-plane-icon-design-icon-paper-icon-cliparts-5a84ba0536f610.5484663315186478132251.png" style="filter: invert(1);" height="20px" width="20px" alt=""></i>
-                </button>
-              </div>
-
-            </div>
+            <form class="input-group" id="ultimas-noticias">
+                <input id="email-news" name="email-news" type="email" class="form-control form-control-sm" placeholder="Ingresa tu Email"
+                      aria-label="Your email" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button id="button-addon1" type="submit" title="send" class="btn btn-link btn-search">
+                            <img src="image/kisspng-airplane-paper-plane-icon-design-icon-paper-icon-cliparts-5a84ba0536f610.5484663315186478132251.png"
+                                style="filter: invert(1);" height="20px" width="20px" alt=""></i>
+                        </button>
+                    </div>
+                </form>
           </div>
+          <div id="errorTxt">
+            <div id="error"></div>
+        </div>
         </div>
       </div>
     </div>
@@ -199,6 +204,117 @@
       </div>
     </div>
   </footer>
+
+  <script>
+      $("#contacto_form").validate({
+          rules:{
+              name:{
+                  required:true
+              },
+              "last_name":{
+                  required:true
+              },
+              email:{
+                  required:true,
+                  email:true
+              },
+              phone:{
+                  required:true,
+                  minlength:8,
+              },
+              message:{
+                  required:true,
+                  minlength:150
+              }
+          },
+          messages :{
+              name:{
+                  required:"Debe ingresar un nombre"
+              },
+              "last_name":{
+                  required:"Debe ingresar su apellido"
+              },
+              email:{
+                  required:"Debe ingresar un correo",
+                  email:"Debe ingresar un correo valido."
+              },
+              phone:{
+                  required:"Debe ingresar un numero telefonico.",
+                  minlength:"Debe ingresar un numero valido."
+              },
+              message:{
+                  required:"Debe ingresar un mensaje.",
+                  minlength:"Requiere un minimo de 150 palabras."
+              }
+          },
+          errorPlacement: function(error, element) {
+            var customError = $([
+                `<span class="invalid-feedback d-block" id="${element.attr('name')}-errors">`,
+                '  <span class="mb-0 d-block">',
+                    '    <span class="initialism form-error-icon badge badge-danger" style="color: black;">Error</span>',
+                '  </span>',
+                '</span>'
+                ].join(""));
+
+                error.addClass("form-error-message");
+
+                error.appendTo(customError.find("span.mb-0"));
+
+                customError.insertAfter(element);
+                
+
+            },
+        success:function(label){
+            var parentId = $(label).attr('id');
+            console.log(parentId)
+            $(`#${parentId}s`).empty();       
+          }           
+        
+
+      });
+
+    $("#ultimas-noticias").validate({
+        rules:{
+            "email-news": {
+                required: true,
+                email: true
+            }
+        },
+        messages :{
+            "email-news":{
+                required:'Debe ingresar un correo',
+                email:'Ingrese un correo valido'
+            }
+        },
+        errorPlacement: function(error, element) {
+
+            var customError = $([
+                `<span class="invalid-feedback d-block" id="${element.attr('name')}-errors">`,
+                '  <span class="mb-0 d-block">',
+                '    <span class="initialism form-error-icon badge badge-danger">Error</span>',
+                '  </span>',
+                '</span>'
+                ].join(""));
+
+                error.addClass("form-error-message");
+
+                error.appendTo(customError.find("span.mb-0"));
+
+                $('#errorTxt').empty();
+                $('#errorTxt').append('<div id="error"></div>');
+                customError.insertAfter('#error');
+                
+
+        },
+        success:function(label){
+          var parentId = $(label).attr('id');
+          console.log(parentId)
+          $(`#${parentId}s`).empty();       
+        }      
+    });
+
+
+</script>
 </body>
 
 

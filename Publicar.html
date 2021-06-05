@@ -19,6 +19,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
  
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark  navbar-custom sticky-top">
           <div class="container-fluid" id="navbar">
@@ -113,20 +115,20 @@
                         <div class="col-lg-10 col-xl-7 mx-auto"
                         >
                             <h3 class="display-4 mb-3">PUBLICAR</h3>
-                            <form>
+                            <form id="publicar_form">
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="text" placeholder="Titulo" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="title" type="text" name="title" placeholder="Titulo" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Cuerpo de la noticia" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" id="cuerpo" name="cuerpo" placeholder="Cuerpo de la noticia" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                                 <label><strong>Portada</strong></label>
                                 <div class="custom-file mb-3">
-                                  <input type="file" name="files[]" multiple class="custom-file-input form-control" id="customFile">
+                                  <input type="file" name="file" id="file" multiple class="custom-file-input form-control">
                                 </div>
                                 <div class="custom-file mb-3">
-                                    <select class="custom-select">
-                                        <option selected>categoria...</option>
+                                    <select class="custom-select" id="select" name="select">
+                                        <option selected>Categorias</option>
                                         <option value="1">Covid</option>
                                         <option value="2">Deportes</option>
                                         <option value="3">Economia</option>
@@ -188,16 +190,19 @@
           <h6 class="text-uppercase font-weight-bold mb-4">NOTICIAS</h6>
           <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
           <div class="rounded border">
-            <div class="input-group">
-              <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link btn-search">
-                   <img src="image/kisspng-airplane-paper-plane-icon-design-icon-paper-icon-cliparts-5a84ba0536f610.5484663315186478132251.png" style="filter: invert(1);" height="20px" width="20px" alt=""></i>
-                </button>
-              </div>
-
-            </div>
+            <form class="input-group" id="ultimas-noticias">
+              <input id="email-news" name="email-news" type="email" class="form-control form-control-sm" placeholder="Ingresa tu Email"
+                    aria-label="Your email" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                      <button id="button-addon1" type="submit" title="send" class="btn btn-link btn-search">
+                          <img src="image/kisspng-airplane-paper-plane-icon-design-icon-paper-icon-cliparts-5a84ba0536f610.5484663315186478132251.png"
+                              style="filter: invert(1);" height="20px" width="20px" alt=""></i>
+                      </button>
+                  </div>
+              </form>
           </div>
+          <div id="errorTxt">
+            <div id="error"></div>
         </div>
       </div>
     </div>
@@ -209,6 +214,110 @@
       </div>
     </div>
   </footer>
+  <script>
+    $("#publicar_form").validate({
+        rules:{
+            title:{
+                required:true
+            },
+            cuerpo:{
+                required:true,
+                minlength:150
+            },
+            file:{
+              required:true
+            },
+            select:{
+              min:0
+            }
+        },
+        messages :{
+          title:{
+                required:"Debe ingresar un titulo"
+            },
+            cuerpo:{
+                required:"Debe ingresar un cuerpo para la noticia.",
+                minlength:"Requiere un minimo de 150 palabras."
+            },
+            file:{
+              required:'Debe subir una imagen.'
+            },
+            select:{
+              min:'Seleccione una categoria valida.'
+            }
+        },
+        errorPlacement: function(error, element) {
+          var customError = $([
+              `<span class="invalid-feedback d-block" id="${element.attr('name')}-errors">`,
+              '  <span class="mb-0 d-block">',
+                  '    <span class="initialism form-error-icon badge badge-danger" style="color: black;">Error</span>',
+              '  </span>',
+              '</span>'
+              ].join(""));
+
+              error.addClass("form-error-message");
+
+              error.appendTo(customError.find("span.mb-0"));
+
+              customError.insertAfter(element);
+              
+
+          },
+      success:function(label){
+          var parentId = $(label).attr('id');
+          console.log(parentId)
+          $(`#${parentId}s`).empty();       
+        }           
+      
+
+    });
+
+  $("#ultimas-noticias").validate({
+      rules:{
+          "email-news": {
+              required: true,
+              email: true
+          }
+      },
+      messages :{
+          "email-news":{
+              required:'Debe ingresar un correo',
+              email:'Ingrese un correo valido'
+          }
+      },
+      errorPlacement: function(error, element) {
+
+          var customError = $([
+              `<span class="invalid-feedback d-block" id="${element.attr('name')}-errors">`,
+              '  <span class="mb-0 d-block">',
+              '    <span class="initialism form-error-icon badge badge-danger">Error</span>',
+              '  </span>',
+              '</span>'
+              ].join(""));
+
+              error.addClass("form-error-message");
+
+              error.appendTo(customError.find("span.mb-0"));
+
+              $('#errorTxt').empty();
+              $('#errorTxt').append('<div id="error"></div>');
+              customError.insertAfter('#error');
+              
+
+      },
+      success:function(label){
+          var parentId = $(label).attr('id');
+          switch (parentId) {
+            case 'email-news-error':
+            $('#email-news-errors').empty();
+              break;             
+
+          }              
+        }
+  });
+
+
+</script>
 </body>
 
 
